@@ -23,7 +23,7 @@ Fork of the original Gnome Shell extension allowing customization of notificatio
 2. Copy to your extensions folder:
 
    ```bash
-   cp -r LiveLockScreen ~/.local/share/gnome-shell/extensions/notification-position-re-reloaded@chrhuang
+   cp -r notification-position-re-reloaded ~/.local/share/gnome-shell/extensions/notification-position-re-reloaded@chrhuang
    ```
 3. Log out and back in, then enable the extension:
 
