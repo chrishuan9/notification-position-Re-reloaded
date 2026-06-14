@@ -23,6 +23,7 @@
 */
 import GObject from 'gi://GObject';
 import Gtk from 'gi://Gtk';
+import Adw from 'gi://Adw';
 import Gio from 'gi://Gio';
 import GLib from 'gi://GLib';
 import * as Utils from './utils.js';
@@ -34,13 +35,15 @@ export default class NotificationExtensionPreferences extends ExtensionPreferenc
         super(metadata);
     }
 
-    getPreferencesWidget() {
-        let frame = new Gtk.Box();
-        let widget = new Preferences(this.getSettings());
-        frame.append(widget.main);
-        if (frame.show_all)
-            frame.show_all();
-        return frame;
+    fillPreferencesWindow(window) {
+        const page = new Adw.PreferencesPage();
+        const group = new Adw.PreferencesGroup();
+        page.add(group);
+
+        const widget = new Preferences(this.getSettings());
+        group.add(widget.main);
+
+        window.add(page);
     }
 }
 
